@@ -701,12 +701,11 @@ div.htmlContainer:hover figure {
 .webDev-img img{
     width: 50%;
     /* margin-bottom: 3%;  */
-    margin: 0 auto 3%
+    margin: 0 auto 3%;
 }
 /* 3rd-img */
 .edu-web-img img{
-    width: 50%;
-    margin: 0 auto
+    width: 65%;
 }
 
 .first-container-AM h5,
