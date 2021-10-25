@@ -1,0 +1,1214 @@
+.container-page{
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    
+}
+
+.container-col-left{
+    background-color: lime;
+    width:20%;
+}
+
+:root{
+    --darkBlue: #00008b;
+    --Text_darkRed: #8b0000;
+    --darkLimeGreen: #008b00;
+    --bg_paleBlue1: #ededff;
+    --card_paleBlue2: #d9d9ff;
+    --text-Shadow:1px 1px 3px #666;
+    --shadow: 0 1px 5px rgb(104, 104, 104, 0.8);
+}
+/* adding lt & right border color to body */
+html{
+    background-color: var(--darkLimeGreen);
+    margin: 0 0.25em;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--bg_paleBlue1);
+    margin:0;
+    padding: 0;   
+ /* this allow html background to set left & right border color */
+    margin-left:3.5%;
+    margin-right: 3.5%;
+
+}
+
+img{
+    display: block;
+}
+
+/* navigation */
+.navBg{
+    background-color: var(--darkBlue);
+    color: white;
+}
+
+.nav-text{
+    margin-right: 100px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.nav-text:hover{
+    transform: scale(1.2);
+    transition: all 1s linear;
+}
+
+/* at top page */
+.helipad-container{
+margin: 5% 0;
+}
+.helipad img{
+    width:20%;
+    margin:0 auto;
+    opacity: 0.3;
+}
+
+.helipad-footer img{
+    opacity: 0.3;
+}
+
+/* home page on & bottom helipad */
+.helipad-container, .helipad-footer{
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+}
+.helipad-textContent {
+    text-align: center;
+/* this gives every letter some vanishing point */
+    perspective: 800px;    
+}
+
+ /* ready go text flipup animation Start */
+.helipad-textContent span, .helipad-footer span{
+    /* overflow: hidden; */
+    font-family: monserrate, sans-serif;
+    font-weight: 900;
+    font-size: 3.5em;
+    color: var(--Text_darkRed);
+    opacity:0.8;
+    /* important: must set inline-block inorder for animation to work */
+    display: inline-block;
+    /* x: 50% of the way across letter bound by box & 70% */
+    transform-origin: 50% 70%;    
+}
+/* alternate text color */
+span:nth-child(2n){
+    color: lightsalmon;
+}
+
+span:nth-child(1){
+    animation: flipUp 2s cubic-bezier(0.68, -0.55, 0.26, 1.55) both;
+}
+span:nth-child(2){
+    /* second set 0.2 is delay time */
+    animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) 0.2s both;
+}
+span:nth-child(3){
+    animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) 0.4s both;
+}
+span:nth-child(4){
+    animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) 0.6s both;
+}
+span:nth-child(5){
+    animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) 0.8s both;
+}
+span:nth-child(6){
+    animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) 1.0s both;
+}
+span:nth-child(7){
+    animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) 1.2s both;
+}
+/* Ready-Go END here - we have landed continue till nth-child(12) */
+span:nth-child(8){
+    animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) 1.4s both;
+}
+span:nth-child(9){
+    animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) 1.6s both;
+}
+span:nth-child(10){
+    animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) 1.8s both;
+}
+span:nth-child(11){
+    animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) 2s both;
+}
+span:nth-child(12){
+    animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) 2.2s both;
+}
+
+@keyframes flipUp {
+    from {transform: rotateX(90deg);}
+    to {transform: rotateX(0deg);}
+         }
+
+ /* ready go text flipup animation END */
+
+ /* set to absolute so plane will overlap on top  */
+ .container-plane-component{
+    position: absolute;
+    left:5px;
+}
+
+/* set plane to stick on loc */
+.plane{
+    position: sticky;
+/* Raise item 1 level above helipad */
+    z-index:1;
+/* create movement for plane */
+    animation: plane 6s linear 1s infinite;
+    perspective:1000px;     
+}
+
+@keyframes plane{
+        0%{transform: translateY(0);}
+        15%{transform: translateY(8px);}
+        25%{transform: translateY(0);}
+        45%{transform: translateY(8px);}
+        75%{transform: translateY(0);}
+        85%{transform: translateY(8px);}
+        100%{transform: translateY(0);}      
+} 
+.plane img{
+    text-align: center;
+    width:17%;
+    /* margin: -35% auto 0 auto; */
+    margin:  0 auto;
+}
+
+.sideNavContactme{
+    margin-top: -13em;
+    margin-left: 10px;
+}
+
+.sideNav{
+    position: fixed;
+}
+.sideNav p{
+    font-size: 0.9em;
+}
+
+
+/* set navLink "About Me" on sticky position */
+.sideNav a p{
+    transform: rotate(-90deg);
+    /* bgColor same with html color  */
+    /* background-color: var(--darkLimeGreen); */
+    color:whitesmoke;
+    padding: 8px 6px;
+    margin-left:-85px;
+    width: 100px;
+    height: 40px;
+    text-decoration: none;
+    top:0%;
+}
+
+.sideNav p{
+    /* disable: remove parent container use position to shift p out of its own container */
+    /* position: absolute;
+    top: -60px;   */
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif; 
+}
+
+.sideNav:hover{
+    transform: scale(1.1);
+    transition: 1s all linear;
+}
+
+.sideNav:hover a{
+    text-decoration: none;
+
+}
+.showcase-wrapper{
+    position: relative;
+    top:300px;
+}
+
+/* slideIn Card animation START - homepage & contactMe.html*/
+.showcase-wrapper, .contactMeTextContent{
+    animation: slideIn 0.4s linear, fadeIn 4s ease-in;
+}
+@keyframes slideIn{
+    0%{transform: translateY(100px);
+    animation-timing-function: ease-out}
+
+    20%{transform: translateY(-30px);
+    animation-timing-function: ease-in}
+
+    40%{transform: translateY(10px);
+    animation-timing-function: ease-out}
+
+    60%{transform: translateY(-10px);
+    animation-timing-function: ease-in}
+
+    80%{transform: translateY(3px);
+    animation-timing-function: ease-out}
+    
+    90%{transform: translateY(-3px);
+    animation-timing-function: ease-in}
+
+    100%{transform:translateY(0);
+    animation-timing-function: ease-out}
+}
+@keyframes fadeIn{
+    from {opacity: 0;}
+    to{opacity:1;}
+}
+/* slideIn Card animation END */
+.showcase-container{
+    /* margin: 5% auto;  */
+    display: grid; 
+    grid-template-areas:". . portrait-left  text-content container container ."; 
+    justify-content: center;
+    width:100%;
+   gap:5%;
+   z-index:1;                         
+}
+.portrait-left{
+grid-area: portrait-left;
+margin-left: 0%;
+}
+
+div#container{
+grid-area: container;
+width:100%;
+cursor:pointer;
+z-index:1;  
+padding-top: 5%;                       
+}
+.text-content{
+grid-area: text-content;
+background-color: var(--bg_paleBlue1);
+/* opacity:0.9; */
+}
+
+
+    /* html img size reduced */
+    .showcase-img-right img{
+        max-width:70%;
+        /* margin-bottom: 15%; */
+    } 
+
+.text-content h1{
+/* margin-bottom:3%; */
+font-family: 'Montserrat', sans-serif;
+font-weight: 900;
+font-size: 2.5em;
+}
+
+.text-content .text{
+    text-shadow: var(--text-Shadow);
+}
+/* index.html => scrolling Text - Start */
+.scrollingText{
+        height: 60px;	
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 2%;
+       }
+       .scrollingText h3{
+        font-size: 2.5vw;
+        opacity:0.5;
+        color: var(--darkLimeGreen);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 2%;
+        line-height: 50px;
+        text-align: center;
+        /* Starting position */
+        -moz-transform:translateX(100%);
+        -webkit-transform:translateX(100%);	
+        transform:translateX(100%);
+        /* Apply animation to this element */	
+        -moz-animation: scrollingText 15s linear infinite;
+        -webkit-animation: scrollingText 15s linear infinite;
+        animation: scrollingText 15s linear infinite;
+       }
+       /* Move it (define the animation) */
+       @-moz-keyframes scrollingText {
+        0%   { -moz-transform: translateX(100%); }
+        100% { -moz-transform: translateX(-100%); }
+       }
+       @-webkit-keyframes scrollingText {
+        0%   { -webkit-transform: translateX(100%); }
+        100% { -webkit-transform: translateX(-100%); }
+       }
+       @keyframes scrollingText {
+        0%   { 
+        -moz-transform: translateX(100%); /* Firefox bug fix */
+        -webkit-transform: translateX(100%); /* Firefox bug fix */
+        transform: translateX(100%); 		
+        }
+        100% { 
+        -moz-transform: translateX(-100%); /* Firefox bug fix */
+        -webkit-transform: translateX(-100%); /* Firefox bug fix */
+        transform: translateX(-100%); 
+        }
+/* index.html => scrolling Text - End */
+
+}
+
+.cardTop{
+    margin-bottom:5px;
+    overflow: hidden;
+} 
+.card-grid-container{
+    /* for plane fly through effect */
+    position:relative;
+    z-index: 1;
+    display: grid;
+    grid-template-areas: ". card-1 card-2 card-3 .";
+    margin-bottom:100px;
+    justify-items:center;
+}
+
+.card-1{
+    grid-area: card-1;
+}
+.card-2{
+    grid-area: card-2;
+}
+.card-3{
+    grid-area: card-3;
+}
+.card-wrapper{
+    background: var(--darkBlue);
+    box-shadow: var(--shadow);
+    border-radius: 6px;
+    padding:1em;
+    opacity: 0.9;
+    margin: 5%; 
+    max-width:220px;
+    /* margin:0 auto; */
+}
+
+
+.card-wrapper img{
+    width:100%;
+    margin-top:3%; 
+}
+
+a.card-link{
+    text-decoration: none;
+}
+
+.fa-external-link-alt:hover{
+    color: var(--darkLimeGreen);
+    /* transform: scale(1.2);
+    transition: all 0.7s linear; */
+}
+.card-bottom-top{
+    /* border-top: 1px solid var(--darkLimeGreen); */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1.5em;
+    margin-top:10%;
+   
+}
+
+/* animated card-link icon when card-wrapper is being hover over */
+.card-wrapper:hover .card-link{
+    transform:scale(1.2);
+    color: red;
+    transition: all 0.7s linear;
+
+}
+p.card-bottom{
+    border-radius: 6px;
+    color: var(--bg_paleBlue1);
+    text-align:center;
+    font-size:1.2em;
+    font-weight: bold;
+    padding-top: 1em;
+    text-decoration: none;
+}
+/* create hover display text - start */
+.card-wrapper:hover .hiddenContent{
+    visibility: visible;
+    opacity: 0.6;
+    padding-top:8;
+}
+.hiddenContent{
+    font-size: 0.8em;
+    margin:0;
+    padding:0;
+    color:white;
+    visibility: hidden;
+    -webkit-transition: visibility 0s, opacity 0.2s linear; 
+    transition: visibility 0.5s, opacity 0.5s linear;
+}
+.hiddenContent p{
+    text-align: center;
+}
+/* create hover display text - end */
+
+/* footer copy from food card */
+
+.footer-container{ 
+    margin-top: 8%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: var(--darkBlue);
+    box-shadow: var(--shadow);
+    text-align: center;
+    /* background-image: linear-gradient(to top, #ff4c68, #ff617f, #ff7495, #ff87a8, #ff99ba); */
+}
+
+.social-icon{
+    padding-right: 0.5%;
+}
+
+/* About Me page */
+
+.container-fluid-aboutMe{
+    background-color: var(--card_paleBlue2);
+    box-shadow: var(--shadow);
+
+    background-image: url(img/cloud_one.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+    margin-top: 15%;
+    margin-bottom: 8%;
+    padding-left: 5%;
+    padding-right: 5%;
+    opacity:0.9;
+    position: relative;
+    top:150px;  
+}
+/* 3 container visibility set to hidden. this'll be changed to visible when Jquery addclass of standard-animation */
+.first-container-AM{
+    /* margin-bottom: 8%; */
+    padding-top:3%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    visibility: hidden;
+}
+.second-container-AM{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    align-items: center;
+    justify-self: right;
+    visibility: hidden;
+    padding-bottom: 2%;
+}
+.last-container-AM{
+    visibility: hidden;
+}
+.standard-animation{
+    visibility: visible;
+    /* animation: sideSlideIn 6s linear, fadeIn 3s ease-in; */
+    animation: sideSlideIn 4s linear, fadeIn 3s ease-in;
+}
+@keyframes sideSlideIn{
+        
+        0%{transform: translateY(250px);
+            animation-timing-function: ease-in;
+    }
+        10%{transform: translateY(-5px);
+            animation-timing-function: ease-out;
+        }
+        20%{transform: translateY(5px);
+            animation-timing-function: ease-in;
+        }
+        30%{transform: translateY(-4px);
+            animation-timing-function: ease-out;
+        }
+        40%{transform: translateY(4px);
+            animation-timing-function: ease-in;
+        }
+        50%{transform: translateY(-3px);
+            animation-timing-function: ease-out;
+        }
+        60%{transform: translateY(3px);
+            animation-timing-function: ease-in;
+        }
+        70%{transform: translateY(-2px);
+            animation-timing-function: ease-out;
+        }
+        80%{transform: translateY(2px);
+            animation-timing-function: ease-in;
+        }
+        100%{transform: translateY(0);
+            animation-timing-function: ease-out;
+        }
+}
+
+ .showCaseWork{
+     border-radius: 6px;
+     margin-top: 15%;
+     z-index:1;
+     opacity: 0.9;
+ } 
+ .mobileTitle{
+     padding-top: 2%;
+     text-align: center;
+     color: gray;
+    }
+
+.imgContainerTop{
+    width: 65%;
+     Margin: 5% auto;
+     display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    gap:1%;  
+ }
+ .imgContainerBottom{
+     width: 50%;
+     Margin: 5% auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap:2%;  
+ }
+
+ 
+ div.htmlContainer{
+     margin:0 auto;
+     position: relative;
+     height: 550px;
+     margin-bottom: 2%;
+ }
+
+div.htmlContainer figure{
+     position: absolute;
+     left: 15%;
+     cursor: pointer;
+ }
+
+ .slideshowTitle{
+     color: gray;
+     text-align: left;
+     margin-left:15%;
+ }
+/* slide-show on hover effect - START */
+div.htmlContainer figure {
+    /* 1.scale3d all set to 1 is default size setting 2. X,Y,Z origin pt */
+	transform: perspective(1200px) translateZ(0px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1);
+	transform-origin: 140% -5%;
+	transition: none;	
+}
+
+div.htmlContainer:hover figure {
+    /* translateZ(50px) move towards viewr. 2.rotateY(180deg), obj rotate around Y-axis. 3.scale3d decrease X & y to half */
+	transform: perspective(1200px) translateZ(50px)  rotateY(180deg) rotateX(70deg) scale3d(0.5, 0.5, 1);	
+}
+
+.htmlContainer #html8 {
+	z-index: 12;
+    width:404;
+}
+
+.htmlContainer:hover #html8 {
+	z-index: 1;	
+	transition: transform 2s linear, z-index 2s step-end;	
+}
+
+.htmlContainer #html7 {
+	z-index: 11;
+
+}
+.htmlContainer:hover #html7 {
+	z-index: 4 ;	
+	transition: transform 2s linear 2s, z-index 2s step-end;
+}
+
+.htmlContainer #html6 {
+	z-index: 10;
+    opacity:1; 
+}
+.htmlContainer:hover #html6 {
+	z-index: 3;	
+	transition: transform 2s linear 4s, z-index 2s step-end;	
+}
+
+.htmlContainer #html5 {
+	z-index: 9;
+    opacity:1; 
+}
+.htmlContainer:hover #html5 {
+	z-index: 2;	
+	transition: transform 2s linear 6s, z-index 2s step-end;	
+}
+
+/* slide-show on hover effect - END-*/
+
+ .showCaseWork-smallViewport{
+     margin: 20% auto;
+     display: flex;
+     justify-content: center;
+     align-content: center;
+     z-index:1;
+     opacity: 0.9;
+
+ }
+
+.mobile-top-3, .mobile-top-7{
+    width:254px;
+    padding:5%;
+    border-radius: 25px;
+    box-shadow: var(--shadow);
+    border:1px solid darkslategray;
+}
+
+.mobile-top-1, .mobile-top-5{
+
+    width:203px;
+    padding:5%;
+    opacity: 0.95;
+    border-radius: 25px;
+    position: relative;
+    top:60px;
+    box-shadow: var(--shadow);
+    border:1px solid darkslategray;
+}
+.mobile-top-2, .mobile-top-4, .mobile-top-6, .mobile-top-8{
+    width:234px;
+    padding:5%;
+    opacity: 0.95;
+    border-radius: 25px;
+    position: relative;
+    top:30px;
+    box-shadow: var(--shadow);
+    border:1px solid darkslategray;
+} 
+.html-top-1{
+    position:relative;
+
+}
+.html-top-3{
+    position:relative;
+
+}
+.html-top-2{
+    position:absolute;
+
+}
+
+/* 1st-img */
+/* .aboutMe-img img{
+    width:60%;
+    padding-bottom: 3%;
+} */
+/* 2nd-img */
+.webDev-img img{
+    width: 50%;
+    /* margin-bottom: 3%;  */
+    margin: 0 auto 3%
+}
+/* 3rd-img */
+.edu-web-img img{
+    width: 50%;
+    margin: 0 auto
+}
+
+.first-container-AM h5,
+.last-container-AM h5
+{
+font-family: monserrate, sans-serif;
+ line-height: 1.4;
+ letter-spacing: 0.5px;
+ text-align: justify;
+ width:35%;
+ padding-bottom: 3%; 
+}
+
+.second-container-AM h5{
+    font-family: monserrate, sans-serif;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    text-align: justify;
+    padding-right: 5%;  
+}
+
+.webDev-img img{
+    width: 90%;
+}
+
+.second-wrapper{
+    margin-right:0;
+}
+
+.cloud-wrapper{
+    overflow: hidden;
+}
+/* at footer */
+
+.bottle{
+    position: relative;
+    top:150px;
+    z-index:1;
+    opacity:0.8;
+    
+    margin: 0 auto;
+    width:80%;
+    background: var(--darkBlue);
+    border-radius:10px;
+    box-shadow: var(--shadow); 
+}
+
+.bottle img{
+    margin: 0 auto;
+    width:80%;
+}
+.bottle a{
+    text-decoration: none;
+}
+.bottle a h1:hover{
+    transform: scale(1.2);
+    transition: 1s all linear;
+
+}
+.footerAboutme{
+    position:relative;
+    top:100px;
+}
+.myWork-link{
+    color: var(--bg_paleBlue1);
+    font-size: 3em;
+    font-weight: bold;
+    text-shadow: var(--text-Shadow);  
+    padding-left:36%;
+    width:100%;
+    margin:0 auto;
+    padding-bottom:3%;   
+}
+
+/* AboutMe - END */
+
+/* contactMe */
+/* cube animation - Start */
+div#container{
+    perspective: 1500px;
+}
+div#cube{
+    position:relative;
+/* declared preserve-3d so it get passed down to its childs */
+    transform-style: preserve-3d;
+/* Note:cube size & img size have to set so when the cube stay within this parameter when rotate */
+    width: 150px;
+	height: 150px;
+	cursor: pointer;
+	float: right;
+    /* margin: 3% auto; */
+    margin-right: 100px;
+    /* margin-top: 100px;  */
+}
+div#cube img{
+    position: absolute; 
+    top:0;
+    left:0;
+    display: block;
+	width: 150px;
+	height: 150px;
+    background-color: black;
+    border:1px solid gray;
+    /* opacity:0.8; */
+}
+p.cubeMsg{
+    margin-top:200px;
+    width:180px;
+    font-size: 0.8em;
+    color:var(--darkLimeGreen);
+    opacity: 0.8;  
+}
+/* make each surface arrange to form into a cube */
+/* Note: translateZ must set to half the width of the cube as the axis orgin start at the center */
+img#front { transform: rotateY(0deg) translateZ(75px); }
+img#back { transform: rotateY(180deg) translateZ(75px);}
+img#bottom { transform: rotateX(-90deg) translateZ(75px);}
+img#left { transform: rotateY(-90deg) translateZ(75px);}
+img#right { transform: rotateY(90deg) translateZ(75px);}
+img#top { transform: rotateX(90deg) translateZ(75px); }
+
+div#cube {
+   transform: rotateX(-25deg) rotateY(-25deg) rotateZ(10deg);
+   transition: transform 2s ease-in-out;
+}
+
+
+div#cube:hover{
+   /* transform: rotateX(40deg) rotateY(-215deg) rotateZ(-10deg); */
+   transform: rotateX(30deg) rotateY(-200deg) rotateZ(-10deg);
+}
+
+/* cube animation - END */
+
+ .contactMeContainer{
+    background-image: url(./img/bg-Computer.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center right;
+    background-color: var(--card_paleBlue2);
+    box-shadow: var(--shadow);
+    border-radius: 5px;
+    max-width: 95%;
+    height: 450px; 
+    margin: 2em auto;
+    padding:1em 0;
+    text-align: center;
+    opacity:0.8;
+
+    display: flex;
+    flex-direction: row;
+} 
+
+
+.contactMeTextContent h1{ 
+  margin-top:50%;
+}
+
+.emailText{
+    font-weight: bold;  
+}
+
+@media only screen and (max-width:1200px) {
+    /* index.html */
+    .showcase-container{
+        /* added 2 portrait-left so to make container centered */
+        grid-template-areas: 
+                            ". portrait-left ."
+                            ". portrait-left container"
+                            ". portrait-left ."
+                            "text-content text-content text-content";   
+                           
+    }
+
+
+.text-content h2, .text-content h4{
+    font-size:medium;
+}
+
+div#cube{
+    margin-left: 50px;
+    }
+ .showCaseWork{
+     margin-top: 28%;
+    overflow:hidden;
+ }
+    /* index.js */
+    
+    .sideNav a p{
+        font-size: 0.8em;
+        margin-left: -80px;
+    }
+    /* portrait */   
+    .text-content{
+        /* width: 18%; */
+        font-size: 0.8em;
+        text-align: center;
+       
+    }
+/* reduce from 6.25em to accommodate smaller width */
+    /* .card-grid-container{
+        column-gap: 3em;
+    } */
+    .card-bottom-top{
+        /* border-top: 1px solid var(--darkLimeGreen); */
+        display: flex;
+        flex-direction: column;
+        font-size:x-small;
+    }
+
+    /* contactme page */
+    .contactMeContainer{
+        /* background-image:none ; */
+        background-image: url(img/cloud_one.png);
+        opacity:0.9;
+    }
+}
+
+@media only screen and (min-width:1000px){
+    /* aboutMe.html - hide 1 col display above 1000px viewport */
+    .showCaseWork-smallViewport{
+      display: none;
+      }
+}
+
+@media only screen and (max-width:1000px) {
+    
+    /* aboutMe.html - hide larger content  */
+.showCaseWork{
+    display:none;
+}
+/* show 1 col view at smaller viewport of below 1000px */
+.showCaseWork-smallViewport{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    margin-top: 220px;
+    margin-bottom: 0;  
+    
+}
+
+.mobile-bottom-1{
+padding:5%;
+margin: 0 auto 3%;
+width:254px;
+border-radius: 25px;
+box-shadow: var(--shadow);
+}
+.mobile-bottom-2, .mobile-bottom-3, .mobile-bottom-4, .mobile-bottom-5, .mobile-bottom-6, .mobile-bottom-7, .mobile-bottom-8{
+    padding:5%;
+    margin: 10px auto;
+    width:254px;
+    border-radius: 25px;
+    box-shadow: var(--shadow);
+
+}
+
+    .container-fluid-aboutMe{
+        margin-top: 35%;
+    }
+    .aboutMe-helipad-container{
+        margin-bottom: 100px;
+    }
+
+        /* index.js */
+        .sideNav{
+            /* position: fixed; */
+            margin-left: 0.6em;
+        }
+        .sideNav p{
+            font-size: 0.7em;
+        }
+       
+        .helipad-footer{
+            height: 80px; 
+        }
+        /*AboutMe page*/
+        .container-fluid-aboutMe h4, 
+        .container-fluid-aboutMe h5{
+            font-size: small;
+        }
+
+        .myWork-link{      
+            font-size: 3em; 
+            /* reduced */
+            padding-left: 28%;  
+        }
+ 
+/* contactme.html */
+        .contactMeTextContent{ 
+            margin-left: -25%;
+          }
+
+          .sideNavContactme{
+            margin-left: 20px;
+        }
+    
+    .aboutMe-helipad-container{
+        margin-bottom: 150px;
+    }
+
+        .standard-animation{
+            animation: none;
+        }
+        .first-container-AM, .second-container-AM, .last-container-AM{
+            visibility: visible;
+        }
+
+        html{
+            margin: 0 0.6em;
+        }
+        /* index.js */
+        .sideNav{
+            margin-left: 0.9em;
+        }
+        .sideNav a p{
+            font-size: 0.7em;
+            margin-left:-85px;
+        }
+
+        .helipad-textContent span, .helipad-footer span{
+            font-size: 2.5em;
+            margin-top: 5%;
+        }
+
+        .text-content{
+            margin: 0 auto;
+            text-align: left;
+        }
+
+    /* remove cloud on this viewport - as animation scroll caused a empty band on right screen */
+    .cloud-drifting{
+        display:none;
+    }
+        /* to room for top & bottom to show planeLanding */
+        .cardTop{
+          /* solve issue of cardTop item overlapping on bottom element  */
+          background: none;
+          box-shadow: none;
+          margin-bottom: 0;   
+
+        }
+        .scrollingText h3{
+            font-size: 1em;
+        }
+
+        /*AboutMe page*/
+        .container-fluid-aboutMe h4, 
+        .container-fluid-aboutMe h5{
+            font-size: x-small;
+        }
+
+        .first-container-AM{
+            padding-top:5%;
+            align-items: left;
+        }
+        
+        /* .aboutMe-img img, */
+        .webDev-img img,
+        .edu-web-img img
+        {
+            width: 100%;
+            margin-bottom: 3%;
+        }
+
+        .first-container-AM h5,
+        .last-container-AM h5
+        {
+            width:100%;
+        }
+        /* change to 1 col */
+        .second-container-AM{
+            grid-template-columns: 0 100%;   
+        }
+        /* .last-container{
+            margin-top: 10%;
+            padding-bottom: 5%;
+        } */
+        .myWork-link{      
+            font-size: 1.5em; 
+            /* reduced */
+            padding-left: 16%;  
+        }
+        .contactMeTextContent{ 
+            margin-left: -80%;
+            margin-top:20%;
+          }
+         img.paperPlane{
+         width:95%;
+    }
+    .sideNavContactme{
+        margin-left: 25px;
+    }
+ .showCaseWork-smallViewport{
+    width: 65%;
+    border-radius:6px;
+ }
+ h2.mobileTitle{
+     font-size: smaller;
+ }
+}
+@media only screen and (max-width:800px) {
+    .showcase-container{
+        grid-template-areas: 
+                            ". portrait-left ."
+                            ". text-content ." 
+                            ". container .";
+                            gap:5%;
+                            margin-bottom: 120px;
+                            
+    }
+    .text-content{
+        margin-top:2%;
+    }
+    p.cubeMsg{
+        text-align: right;
+        width:400px
+    }
+    .showcase-wrapper{
+        position: relative;
+        /* reduced */
+        top:200px;
+    }
+}
+@media only screen and (max-width:550px) {
+.card-grid-container{
+    grid-template-areas: "card-1"
+                        "card-2"
+                        "card-3";
+                        margin-bottom: 0;
+}
+}
+
+    @media only screen and (max-width:460px) {
+      /* homepage */
+    .aboutMe-sideNav{
+        margin-top: 300px;
+        transition: all 0.5s linear;
+    }
+    .container-plane-component{
+        right:5px;
+    }
+/* remove dot at both sides so to prevent offset to one side*/
+    .showcase-container{
+        grid-template-areas: 
+                            "portrait-left"
+                            "text-content"  
+                            "."   
+                            "container"
+                            "container";
+                            margin-bottom: 0;
+                            overflow:hidden;                                                                 
+    }
+
+div#container{
+    /* center cube */
+    margin-left: 8%;
+/* prevent cube being cut-off */
+    min-height:320px;
+}
+.text-content{
+    text-align: center;
+}
+p.cubeMsg{
+    display: none;
+}
+        .text-content h1{
+            font-size: 2em;
+        }
+        .showcase-wrapper{
+            /* reduced again */
+            top:110px;
+        }
+
+        .helipad-container{
+           padding-bottom: 0;
+        }
+        .helipad-textContent span, .helipad-footer span{
+            padding-top:3%;
+            font-size: 1.3em;
+            margin-bottom: 3%;       
+        }
+   
+        .card-wrapper{
+            padding-bottom: 0;
+            margin-top:0;
+            margin-bottom:10%;
+        }
+        .container-fluid-aboutMe{
+            top:50px;
+        }
+        .showCaseWork-smallViewport{
+            width: 95%;
+            margin-top: 100px;     
+         }
+        .bottle{
+            top:50px;
+        }
+        .footerAboutme{
+            /* 50px reduced to 30px */
+            top:30px;
+        }
+    }
+
+  

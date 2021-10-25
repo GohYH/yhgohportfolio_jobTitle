@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Bootstrap CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <!-- google font-monserrate, weight:700 & 900 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font awsome CDN -->
+    <!-- Font-awsome -->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"
+    ></script>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+
+    <title>Goh YH Portfolio</title>
+    <!-- temp -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+      $(window).scroll(function () {
+        // if($(this).scrollTop()> 20){
+        //   $('.plane').css("top", "-15%");
+        // }
+
+        if ($(this).scrollTop() > 30) {
+          $(".plane").css("top", "60%");
+
+          $(".first-container-AM").addClass("standard-animation");
+        }
+
+        if ($(this).scrollTop() > 500) {
+          $(".second-container-AM").addClass("standard-animation");
+        }
+
+        // for 3 rows hv to turn uncomment this code
+        // if ($(this).scrollTop() > 1200) {
+        //   $(".last-container-AM").addClass("standard-animation");
+        // }
+        else {
+          $(".plane").css("top", "15%");
+        }
+      });
+    </script>
+    <!-- temp end -->
+  </head>
+  <body>
+    <!-- navbar-dark bg-dark  -->
+    <!-- <div class="container-fluid"> -->
+    <nav class="navbar navbar-expand-lg navbar-dark navBg my-center">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="img/logo.png" alt="brand" />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav d-xs-block text-center p-2">
+            <a
+              class="nav-link nav-text nav-text-ml"
+              aria-current="page"
+              href="index.html"
+              >Home</a
+            >
+            <a
+              title="About me"
+              class="nav-link active nav-text"
+              href="aboutMe.html"
+              >About Me</a
+            >
+            <a
+              class="nav-link nav-text"
+              href="index.html#target-link-reactProject"
+              >My Work</a
+            >
+            <a class="nav-link nav-text nav-text-ml" href="contactme.html"
+              >Contact Me</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="container-plane-component">
+        <div class="helipad-container helipad">
+          <img class="treeTop" src="img/treeTop_one.png" alt="tree" />
+          <img
+            class="planeWrapper"
+            src="img/planeLanding_round.png"
+            alt="plane landing"
+          />
+          <img src="img/treeTop_one.png" alt="tree" />
+        </div>
+
+        <div class="helipad-textContent aboutMe-helipad-container">
+          <span>R</span>
+          <span>E</span>
+          <span>A</span>
+          <span>D</span>
+          <span>Y&nbsp</span>
+          <span>G</span>
+          <span>O</span>
+          <span>!</span>
+        </div>
+      </div>
+
+      <div class="plane aboutMe-plane">
+        <img src="img/Plane_one.png" alt="plane" />
+      </div>
+
+      <!-- Sticky Navbar -->
+      <div class="sideNav">
+        <a href="index.html">
+          <p>Home</p>
+        </a>
+      </div>
+
+      <div class="container-fluid-aboutMe ml-5 mr-5">
+        <section class="first-container-AM animation-standard">
+          <div class="edu-web-img">
+            <img src="img/engineer.png" alt="engineer" style="width: 65%" />
+          </div>
+          <h4 class="text-right">
+            Pactera Singapore Pte Ltd <br />
+            <strong>Hardware Test Engineer</strong>
+          </h4>
+          <p class="text-muted text-right">
+            <strong>16 Sep 2013 - 29 Feb 16 </strong>
+          </p>
+
+          <h5>
+            Responsible for coordinating all aspects of a project, including
+            planning, resource allocation, task assignment, tracking and
+            reporting daily progress to ensure objectives are achieved.
+          </h5>
+        </section>
+
+        <section
+          class="second-container-AM middle-container animation-standard"
+        >
+          <div></div>
+          <div class="second-wrapper">
+            <div class="webDev-img mr-auto">
+              <img
+                src="img/TeamLeader.png"
+                alt="Team Leader"
+                style="width: 60%"
+              />
+            </div>
+            <h4 class="text-right">
+              Glocom Marketing Pte Ltd <br />
+              <strong>Production Supervisor</strong>
+            </h4>
+            <p class="text-muted text-right">
+              <strong>16 May 2016 - 12 Oct 2020</strong>
+            </p>
+
+            <h5>
+              Oversee day to day production planning , coordinating & execution
+              in order to meet schedule requirements efficiently. Proven ability
+              of using excel tool for statistical data analysis, generating of
+              yield reports and on time delivery reports for management review.
+              Having created application with excel VBA scripting to streamline
+              processes
+            </h5>
+          </div>
+        </section>
+
+        <!--  -->
+
+        <section class="first-container-AM animation-standard">
+          <div class="edu-web-img">
+            <img
+              src="img/educationWebDev.png"
+              alt="education"
+              style="width: 75%"
+            />
+          </div>
+
+          <h4>
+            <strong>Attending</strong>
+            Singapore Polytechnic<br />
+            <span>Full Stack Web Development</span>
+          </h4>
+          <p class="text-muted"><strong>19 Oct 2020 - 19 Sep 2021</strong></p>
+
+          <h5>
+            This course enabled me to build up a strong technical foundation on
+            web developement.On front end, I had learnt
+            <strong class="text-danger"
+              >HTML, CSS, HTML DOM manipulation, Bootstrap, Javascript, jQuery,
+              React JS, React Native, AJAX, WebStorage, Progressive Web Apps
+              setup</strong
+            >. As for backend, I had learnt
+            <strong class="text-danger"
+              >Node Express, RESTful API, mySQL, AWS cloud
+              computing(EC2,S3,RDS).</strong
+            >
+            I focused all my effort in studying & was paid off with a GPA of
+            4.0.
+          </h5>
+        </section>
+
+        <section
+          class="second-container-AM middle-container animation-standard"
+        >
+          <div></div>
+          <div class="second-wrapper">
+            <div class="webDev-img mr-auto">
+              <img src="img/frontEndWeb.png" alt="" />
+            </div>
+            <h4 class="text-right">
+              I <strong>joined</strong> Webscape Consulting Pte Ltd <br />as a
+              <strong>Website Content Publisher</strong>
+            </h4>
+            <p class="text-muted text-right">
+              <strong>04 Oct 2021 - Present</strong>
+            </p>
+
+            <h5>
+              To assist our clients in maintaining their websites, handling
+              day-to day tasks & web page deployment with Content Management
+              tool ( OpenText Teamsite ), as well as creation of responsive
+              website and electronic direct mail with HTML, CSS & Javascript.
+            </h5>
+          </div>
+        </section>
+
+        <!-- <section class="last-container-AM last-container animation-standard">
+          <div class="edu-web-img">
+            <img src="img/educationWebDev.png" alt="" />
+          </div>
+          <h4>
+            <strong>Attending</strong>
+            Singapore Polytechnic<br />
+            <span>Full Stack Web Development</span>
+          </h4>
+          <p class="text-muted"><strong>19 Oct 2020 - 19 Sep 2021</strong></p>
+
+          <h5>
+            My passion grew deeper & I finally decided to sign up a Web
+            Development course to improve the skill. Throughout the course I had
+            built up a strong technical foundation on web developement.On front
+            end, I had learnt
+            <strong class="text-danger"
+              >HTML, CSS, HTML DOM manipulation, Bootstrap, Javascript, jQuery,
+              React JS, React Native, AJAX, WebStorage, Progressive Web Apps
+              setup</strong
+            >. As for backend, I had learnt
+            <strong class="text-danger"
+              >Node Express, RESTful API, mySQL, AWS cloud
+              computing(EC2,S3,RDS).</strong
+            >
+            i'm now waiting in anticipation to become a fully fledged Web
+            Developer one day.
+          </h5>
+        </section> -->
+      </div>
+
+      <div class="bottle">
+        <img src="img/bottleGlass.png" alt="glass-bottle" />
+        <a href="index.html#target-link-reactProject">
+          <h1 class="myWork-link">view My Work</h1>
+        </a>
+      </div>
+    </div>
+    <!-- container-fluid END -->
+
+    <footer class="footer-section footerAboutme pt-3">
+      <div class="footer-container">
+        <a href="https://www.facebook.com/" target="_blank"
+          ><i class="social-icon fab fa-facebook-f fa-2x"></i
+        ></a>
+        <a href="https://twitter.com/login?lang=en" target="_blank"
+          ><i class="social-icon fab fa-twitter fa-2x"></i
+        ></a>
+        <a href="https://www.instagram.com/accounts/login/?" target="_blank"
+          ><i class="social-icon fab fa-instagram fa-2x"></i
+        ></a>
+        <a href="https://mail.google.com/" target="_blank"
+          ><i class="social-icon fas fa-envelope fa-2x"></i
+        ></a>
+        <p class="text-white mt-3">© Copyright 2021. All Right Reserved</p>
+      </div>
+    </footer>
+
+    <!-- bootstrap popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+      integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+      integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
