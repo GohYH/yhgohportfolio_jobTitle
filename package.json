@@ -1,0 +1,16 @@
+{
+  "name": "yhgohoportfolio_jobtitle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "https://GohYH.github.io/yhgohportfolio_jobTitle",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^3.2.3"
+  }
+}
